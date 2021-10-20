@@ -13,19 +13,17 @@ def main():
     file_lines = r.text.split("\n")
 
     addresses = []
-    if len(file_lines) <= 18:
-        for i in range(0, 18, 3):
-            address = Address()
-            address.street = file_lines[i]
-            address.city   = file_lines[i + 1]
-            address.state = file_lines[i + 2][:2]
-            address.zip    = int(file_lines[i + 2][3:])
-            addresses.append(address)
+    for i in range(0, len(file_lines), 3):
+        address = Address()
+        address.street = file_lines[i]
+        address.city   = file_lines[i + 1]
+        address.state = file_lines[i + 2][:2]
+        address.zip    = int(file_lines[i + 2][3:])
+        addresses.append(address)
 
-    if len(file_lines) <= 18:
-        for i in range(6):
-            address = addresses[i]
-            print(f"{address.street}, {address.city}, {address.state} {address.zip}")
+    for i in range(6):
+        address = addresses[i]
+        print(f"{address.street}, {address.city}, {address.state} {address.zip}")
 
 
 if __name__ == "__main__":
