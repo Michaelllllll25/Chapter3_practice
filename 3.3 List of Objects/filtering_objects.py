@@ -45,4 +45,5 @@ students = [
 
 same_grade = int(input("Enter Grade: "))
 result = filter_same_grade(students, same_grade)
-print(*result, sep="\n")
+for student in result:
+    print(f"Name: {student.name} | Grade: {student.grade} | Student ID: {student.student_id}")
