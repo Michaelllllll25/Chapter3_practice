@@ -13,6 +13,15 @@ class Student:
         self.student_id = student_id
 
 def find_student(students: list[Student], student_id: int) -> str:
+    """Search for student id
+
+    Args:
+        students: list[Student]
+        student_id: int
+
+    Returns:
+        A single student object or none if it doesn't exist
+    """
     for stud in students:
         if stud.student_id == student_id:
             return stud
